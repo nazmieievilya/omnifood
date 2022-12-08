@@ -85,11 +85,12 @@
   }
   .btn-mobile-nav {
     display: block;
+    z-index: 1000;
   }
   .main-nav {
     /* opacity: 0; */
     background-color: rgba(255, 255, 255);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -98,6 +99,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
+    z-index: 999;
 
     /* hiding element */
     opacity: 0;
