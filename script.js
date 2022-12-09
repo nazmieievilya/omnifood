@@ -9,6 +9,7 @@ const currYear = new Date().getFullYear();
 yearEl.textContent = currYear;
 
 // smooth scroll
+// FIX SCROLL TO
 function gotToPage(e) {
   e.preventDefault();
   if (e.target.classList.contains("main-nav-link"))
@@ -19,11 +20,9 @@ function gotToPage(e) {
     return window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  const rect = document.querySelector(href).getBoundingClientRect();
-  let coords = rect.top;
-  console.log(rect);
+  const el = document.querySelector(href);
   console.log(href);
-  window.scrollTo({ top: coords, behavior: "smooth" });
+  el.scrollIntoView({ behavior: "smooth" });
 }
 const allLinks = document.querySelectorAll("a:link");
 allLinks.forEach((link) => link.addEventListener("click", gotToPage));
